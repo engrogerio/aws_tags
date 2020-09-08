@@ -178,7 +178,7 @@ def main():
             if not supplied, returns the data to the screen.
             -csv = Generates a file named <prod or non_prod>_EC2_Tags.csv with the requested data.
 
-        If request type is -tags, the tag names should follow separated by a space.
+        If request type is -values, the tag names should follow separated by a space.
 
         Example:
             aws_tags -prod -values count Name instance_id instance_type blc availability_zone private_ip_address Company itemid owner costcenter
@@ -190,6 +190,7 @@ def main():
     args.pop(0) # remove the file name
 
     output = 'stdout'
+    env = 'prod'
     
     if '-prod' in args:
         env = 'prod'
